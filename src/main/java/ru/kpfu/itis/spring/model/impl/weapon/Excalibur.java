@@ -14,11 +14,13 @@ public class Excalibur implements Weapon {
 
     @Override
     public void describe(int fireDamage, int waterDamage, int airDamage, int earthDamage) {
-        System.out.println("Offense provided with help of Excalibur");
-        System.out.println("Fire damage = " + fireDamage);
-        System.out.println("Water damage = " + waterDamage);
-        System.out.println("Air damage = " + airDamage);
-        System.out.println("Earth damage = " + earthDamage);
+        System.out.println("*****************************************");
+        System.out.println("* Offense provided with help of Excalibur");
+        System.out.println("* Fire damage = " + fireDamage);
+        System.out.println("* Water damage = " + waterDamage);
+        System.out.println("* Air damage = " + airDamage);
+        System.out.println("* 1Earth damage = " + earthDamage);
+        System.out.println("*****************************************");
     }
 
     @Override

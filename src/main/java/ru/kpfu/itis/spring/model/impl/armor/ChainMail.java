@@ -14,11 +14,13 @@ public class ChainMail implements Armor {
 
     @Override
     public void describe(int fireResistance, int waterResistance, int airResistance, int earthResistance) {
+        System.out.println("--------------------------------------------------");
         System.out.println("Protection by Chain Mail with following properties:");
         System.out.println("Fire resistance = " + fireResistance);
         System.out.println("Water resistance = " + waterResistance);
         System.out.println("Air resistance = " + airResistance);
         System.out.println("Earth resistance = " + earthResistance);
+        System.out.println("--------------------------------------------------");
     }
 
     @Override

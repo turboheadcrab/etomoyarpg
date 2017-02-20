@@ -6,6 +6,7 @@
     <bean id="liebeVsAmoreFight" class="ru.kpfu.itis.spring.model.impl.fight.LiebeVsAmoreFight">
         <constructor-arg ref="liebeWarrior"/>
         <constructor-arg ref="amoreWarrior"/>
+        <constructor-arg ref="dice"/>
     </bean>
 
 
@@ -24,4 +25,6 @@
     <bean id="excalibur" class="ru.kpfu.itis.spring.model.impl.weapon.Excalibur"/>
     <bean id="chainMail" class="ru.kpfu.itis.spring.model.impl.armor.ChainMail"/>
     <bean id="kevlar" class="ru.kpfu.itis.spring.model.impl.armor.Kevlar"/>
+
+    <bean id="dice" class="ru.kpfu.itis.spring.model.PairOfDice"/>
 </beans>

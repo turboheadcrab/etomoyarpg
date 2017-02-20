@@ -1,6 +1,7 @@
 package ru.kpfu.itis.spring.model.impl.fight;
 
 import ru.kpfu.itis.spring.model.Fight;
+import ru.kpfu.itis.spring.model.PairOfDice;
 import ru.kpfu.itis.spring.model.Warrior;
 
 import java.util.Random;
@@ -17,9 +18,10 @@ public class LiebeVsAmoreFight implements Fight {
     public LiebeVsAmoreFight() {
     }
 
-    public LiebeVsAmoreFight(Warrior warrior1, Warrior warrior2) {
+    public LiebeVsAmoreFight(Warrior warrior1, Warrior warrior2,PairOfDice dice) {
         this.warrior1 = warrior1;
         this.warrior2 = warrior2;
+        this.dice = dice;
     }
 
     @Override
@@ -30,32 +32,56 @@ public class LiebeVsAmoreFight implements Fight {
         warrior1.describe();
         System.out.println("Player 2:");
         warrior2.describe();
+        System.out.println("FIGHT!");
 
+        int p1HP = 1000, p2HP = 1000, turnCount = 1;
+        do {
+            System.out.println("Turn " + turnCount);
 
+            if (turnCount % 2 == 1) {
+                System.out.println("Liebe attacks! Amore defends!");
+                p2HP = turn(p2HP, warrior1, warrior2);
+            } else {
+                System.out.println("Amore attacks! Liebe defends!");
+                p1HP = turn(p1HP, warrior2, warrior1);
+            }
+
+            turnCount++;
+        } while ((p1HP > 0) && (p2HP > 0));
     }
 
-    public class PairOfDice {
+    private int turn(int defendingHP, Warrior attackingPlayer, Warrior defendingPlayer) {
 
-        private int die1;
-        private int die2;
+        dice.roll();
+        attackingPlayer.getWeapon().attack(dice.getDie1());
+        defendingPlayer.getArmor().defend(dice.getDie2());
 
-        public PairOfDice() {
-            roll();
-        }
+        defendingHP = damageCalculator(defendingHP, attackingPlayer.getWeapon().getFireDamage(),
+                defendingPlayer.getArmor().getFireResistance(), dice.getDie1(), dice.getDie2());
+        System.out.println(defendingHP + " HP left after fire battle");
+        defendingHP = damageCalculator(defendingHP, attackingPlayer.getWeapon().getWaterDamage(),
+                defendingPlayer.getArmor().getWaterResistance(), dice.getDie1(), dice.getDie2());
+        System.out.println(defendingHP + " HP left after water battle");
+        defendingHP = damageCalculator(defendingHP, attackingPlayer.getWeapon().getAirDamage(),
+                defendingPlayer.getArmor().getAirResistance(), dice.getDie1(), dice.getDie2());
+        System.out.println(defendingHP + " HP left after air battle");
+        defendingHP = damageCalculator(defendingHP, attackingPlayer.getWeapon().getEarthDamage(),
+                defendingPlayer.getArmor().getEarthResistance(), dice.getDie1(), dice.getDie2());
+        System.out.println(defendingHP + " HP left after earth battle");
 
-        public void roll() {
-            Random random = new Random();
-            die1 = random.nextInt(7);
-            die2 = random.nextInt(7);
-        }
-
-        public int getDie1() {
-            return die1;
-        }
-
-        public int getDie2() {
-            return die2;
-        }
+        return defendingHP;
     }
 
+    private int damageCalculator(int hp, int damage, int resistance, int multiplierDamage, int multiplierResistance) {
+
+        int delta = 0;
+        delta += damage * multiplierDamage;
+        System.out.println("Current damage is " + delta);
+        delta -= resistance * multiplierResistance;
+        System.out.println("Current damage is " + delta);
+        if (delta > 0) {
+            hp -= delta;
+        }
+        return hp;
+    }
 }
