@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="liebeVsAmoreFight" class="ru.kpfu.itis.spring.model.impl.fight.LiebeVsAmoreFight">
+        <constructor-arg ref="liebeWarrior"/>
+        <constructor-arg ref="amoreWarrior"/>
+    </bean>
+
+
+    <bean id="liebeWarrior" class="ru.kpfu.itis.spring.model.impl.warrior.LiebeWarrior">
+        <constructor-arg ref="kevlar"/>
+        <constructor-arg ref="ak47"/>
+    </bean>
+
+    <bean id="amoreWarrior" class="ru.kpfu.itis.spring.model.impl.warrior.AmoreWarrior">
+        <constructor-arg ref="chainMail"/>
+        <constructor-arg ref="excalibur"/>
+    </bean>
+
+
+    <bean id="ak47" class="ru.kpfu.itis.spring.model.impl.weapon.AK47"/>
+    <bean id="excalibur" class="ru.kpfu.itis.spring.model.impl.weapon.Excalibur"/>
+    <bean id="chainMail" class="ru.kpfu.itis.spring.model.impl.armor.ChainMail"/>
+    <bean id="kevlar" class="ru.kpfu.itis.spring.model.impl.armor.Kevlar"/>
+</beans>
