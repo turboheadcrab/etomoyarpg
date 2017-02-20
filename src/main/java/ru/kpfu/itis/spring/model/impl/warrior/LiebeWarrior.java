@@ -1,5 +1,8 @@
 package ru.kpfu.itis.spring.model.impl.warrior;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Component;
 import ru.kpfu.itis.spring.model.Armor;
 import ru.kpfu.itis.spring.model.Warrior;
 import ru.kpfu.itis.spring.model.Weapon;
@@ -7,6 +10,8 @@ import ru.kpfu.itis.spring.model.Weapon;
 /**
  * Created by Apraxin Vladimir on 15.2.17.
  */
+
+@Component
 public class LiebeWarrior implements Warrior {
 
     private Armor armor;
@@ -15,7 +20,8 @@ public class LiebeWarrior implements Warrior {
     public LiebeWarrior() {
     }
 
-    public LiebeWarrior(Armor armor, Weapon weapon) {
+    @Autowired
+    public LiebeWarrior(@Qualifier(value = "kevlar") Armor armor, @Qualifier(value = "ak47") Weapon weapon) {
         this.armor = armor;
         this.weapon = weapon;
     }

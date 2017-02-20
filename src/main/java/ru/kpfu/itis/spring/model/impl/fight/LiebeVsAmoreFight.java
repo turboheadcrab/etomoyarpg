@@ -1,14 +1,17 @@
 package ru.kpfu.itis.spring.model.impl.fight;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Component;
 import ru.kpfu.itis.spring.model.Fight;
 import ru.kpfu.itis.spring.model.PairOfDice;
 import ru.kpfu.itis.spring.model.Warrior;
 
-import java.util.Random;
-
 /**
  * Created by Apraxin Vladimir on 15.2.17.
  */
+
+@Component
 public class LiebeVsAmoreFight implements Fight {
 
     private Warrior warrior1;
@@ -18,7 +21,9 @@ public class LiebeVsAmoreFight implements Fight {
     public LiebeVsAmoreFight() {
     }
 
-    public LiebeVsAmoreFight(Warrior warrior1, Warrior warrior2,PairOfDice dice) {
+    @Autowired
+    public LiebeVsAmoreFight(@Qualifier(value = "liebeWarrior") Warrior warrior1,
+                             @Qualifier(value = "amoreWarrior") Warrior warrior2, PairOfDice dice) {
         this.warrior1 = warrior1;
         this.warrior2 = warrior2;
         this.dice = dice;

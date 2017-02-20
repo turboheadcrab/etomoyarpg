@@ -1,10 +1,15 @@
 package ru.kpfu.itis.spring.model;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
 import java.util.Random;
 
 /**
  * Created by Apraxin Vladimir on 21.2.17.
  */
+
+@Component
 public class PairOfDice {
     private int die1;
     private int die2;

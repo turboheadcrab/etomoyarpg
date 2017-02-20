@@ -1,10 +1,13 @@
 package ru.kpfu.itis.spring.model.impl.weapon;
 
+import org.springframework.stereotype.Component;
 import ru.kpfu.itis.spring.model.Weapon;
 
 /**
  * Created by Apraxin Vladimir on 15.2.17.
  */
+
+@Component
 public class Excalibur implements Weapon {
 
     private static final int fireDamage = 10;

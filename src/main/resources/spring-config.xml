@@ -3,7 +3,7 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean id="liebeVsAmoreFight" class="ru.kpfu.itis.spring.model.impl.fight.LiebeVsAmoreFight">
+    <!--<bean id="liebeVsAmoreFight" class="ru.kpfu.itis.spring.model.impl.fight.LiebeVsAmoreFight">
         <constructor-arg ref="liebeWarrior"/>
         <constructor-arg ref="amoreWarrior"/>
         <constructor-arg ref="dice"/>
@@ -26,5 +26,5 @@
     <bean id="chainMail" class="ru.kpfu.itis.spring.model.impl.armor.ChainMail"/>
     <bean id="kevlar" class="ru.kpfu.itis.spring.model.impl.armor.Kevlar"/>
 
-    <bean id="dice" class="ru.kpfu.itis.spring.model.PairOfDice"/>
+    <bean id="dice" class="ru.kpfu.itis.spring.model.PairOfDice"/>-->
 </beans>

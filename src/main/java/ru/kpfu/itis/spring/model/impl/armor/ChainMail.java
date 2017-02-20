@@ -1,10 +1,13 @@
 package ru.kpfu.itis.spring.model.impl.armor;
 
+import org.springframework.stereotype.Component;
 import ru.kpfu.itis.spring.model.Armor;
 
 /**
  * Created by Apraxin Vladimir on 15.2.17.
  */
+
+@Component
 public class ChainMail implements Armor {
 
     private static final int fireResistance = 0;
