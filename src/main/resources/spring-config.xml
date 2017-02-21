@@ -3,28 +3,28 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <!--<bean id="liebeVsAmoreFight" class="ru.kpfu.itis.spring.model.impl.fight.LiebeVsAmoreFight">
-        <constructor-arg ref="liebeWarrior"/>
-        <constructor-arg ref="amoreWarrior"/>
-        <constructor-arg ref="dice"/>
+    <bean id="liebeVsAmoreFightXML" class="ru.kpfu.itis.spring.model.impl.fight.LiebeVsAmoreFight">
+        <constructor-arg ref="liebeWarriorXML"/>
+        <constructor-arg ref="amoreWarriorXML"/>
+        <constructor-arg ref="diceXML"/>
     </bean>
 
 
-    <bean id="liebeWarrior" class="ru.kpfu.itis.spring.model.impl.warrior.LiebeWarrior">
-        <constructor-arg ref="kevlar"/>
-        <constructor-arg ref="ak47"/>
+    <bean id="liebeWarriorXML" class="ru.kpfu.itis.spring.model.impl.warrior.LiebeWarrior">
+        <constructor-arg ref="kevlarXML"/>
+        <constructor-arg ref="ak47XML"/>
     </bean>
 
-    <bean id="amoreWarrior" class="ru.kpfu.itis.spring.model.impl.warrior.AmoreWarrior">
-        <constructor-arg ref="chainMail"/>
-        <constructor-arg ref="excalibur"/>
+    <bean id="amoreWarriorXML" class="ru.kpfu.itis.spring.model.impl.warrior.AmoreWarrior">
+        <constructor-arg ref="chainMailXML"/>
+        <constructor-arg ref="excaliburXML"/>
     </bean>
 
 
-    <bean id="ak47" class="ru.kpfu.itis.spring.model.impl.weapon.AK47"/>
-    <bean id="excalibur" class="ru.kpfu.itis.spring.model.impl.weapon.Excalibur"/>
-    <bean id="chainMail" class="ru.kpfu.itis.spring.model.impl.armor.ChainMail"/>
-    <bean id="kevlar" class="ru.kpfu.itis.spring.model.impl.armor.Kevlar"/>
+    <bean id="ak47XML" class="ru.kpfu.itis.spring.model.impl.weapon.AK47"/>
+    <bean id="excaliburXML" class="ru.kpfu.itis.spring.model.impl.weapon.Excalibur"/>
+    <bean id="chainMailXML" class="ru.kpfu.itis.spring.model.impl.armor.ChainMail"/>
+    <bean id="kevlarXML" class="ru.kpfu.itis.spring.model.impl.armor.Kevlar"/>
 
-    <bean id="dice" class="ru.kpfu.itis.spring.model.PairOfDice"/>-->
+    <bean id="diceXML" class="ru.kpfu.itis.spring.model.PairOfDice"/>
 </beans>

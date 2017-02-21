@@ -21,18 +21,16 @@ public class Start {
         System.out.println("Enter 1 for XML | Enter 2 for Annotations");
         int variable = scanner.nextInt();
 
-        if (variable == 1) {
-            ApplicationContext context = new ClassPathXmlApplicationContext("spring-config.xml");
-        }
+
         switch (variable) {
             case 1:
                 ApplicationContext contextXML = new ClassPathXmlApplicationContext("spring-config.xml");
-                LiebeVsAmoreFight liebeVsAmoreFightXML = (LiebeVsAmoreFight) contextXML.getBean("liebeVsAmoreFight");
+                LiebeVsAmoreFight liebeVsAmoreFightXML = (LiebeVsAmoreFight) contextXML.getBean("liebeVsAmoreFightXML");
                 System.out.println("XML-based game launch");
                 liebeVsAmoreFightXML.start();
                 break;
             case 2:
-                AbstractApplicationContext contextAnnotaions = new AnnotationConfigApplicationContext(AppConfig.class);
+                ApplicationContext contextAnnotaions = new AnnotationConfigApplicationContext(AppConfig.class);
                 LiebeVsAmoreFight liebeVsAmoreFightAnnotations =
                         (LiebeVsAmoreFight) contextAnnotaions.getBean("liebeVsAmoreFight");
                 System.out.println("Annotations-based game launch");

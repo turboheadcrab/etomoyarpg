@@ -23,7 +23,8 @@ public class LiebeVsAmoreFight implements Fight {
 
     @Autowired
     public LiebeVsAmoreFight(@Qualifier(value = "liebeWarrior") Warrior warrior1,
-                             @Qualifier(value = "amoreWarrior") Warrior warrior2, PairOfDice dice) {
+                             @Qualifier(value = "amoreWarrior") Warrior warrior2,
+                             @Qualifier(value = "pairOfDice") PairOfDice dice) {
         this.warrior1 = warrior1;
         this.warrior2 = warrior2;
         this.dice = dice;

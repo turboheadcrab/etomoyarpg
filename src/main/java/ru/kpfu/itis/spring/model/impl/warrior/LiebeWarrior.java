@@ -21,7 +21,7 @@ public class LiebeWarrior implements Warrior {
     }
 
     @Autowired
-    public LiebeWarrior(@Qualifier(value = "kevlar") Armor armor, @Qualifier(value = "ak47") Weapon weapon) {
+    public LiebeWarrior(@Qualifier(value = "kevlar") Armor armor, @Qualifier(value = "AK47") Weapon weapon) {
         this.armor = armor;
         this.weapon = weapon;
     }
